@@ -1,0 +1,145 @@
+.site-footer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 56.6146cqw;
+  flex-direction: column;
+  gap: 8.2813cqw;
+  margin-top: var(--space-con4-to-footer);
+  padding-top: 5.2083cqw;
+  overflow: hidden;
+  background: var(--color-brand-green);
+  color: #fff;
+  container-type: inline-size;
+}
+
+.site-footer__ticker {
+  position: relative;
+  width: 100%;
+  height: 8.2292cqw;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.site-footer__ticker p {
+  position: absolute;
+  top: -3.0208cqw;
+  left: 0;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 9.4792cqw;
+  font-weight: 700;
+  letter-spacing: 0.0948cqw;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.site-footer__bottom {
+  position: relative;
+  width: 100%;
+  height: 34.8958cqw;
+  flex: 0 0 auto;
+}
+
+.site-footer__information {
+  position: absolute;
+  top: 0.0521cqw;
+  left: 3.125cqw;
+  display: flex;
+  width: 93.75cqw;
+  flex-direction: column;
+  gap: 2.1875cqw;
+  padding-block: 1.3021cqw;
+  overflow: hidden;
+}
+
+.site-footer__logo {
+  display: block;
+  width: 114px;
+  height: 32px;
+  flex: 0 0 auto;
+}
+
+.site-footer__links-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.site-footer__policy {
+  display: flex;
+  align-items: center;
+  gap: 1.9792cqw;
+  color: #fff;
+  font-family: var(--font-brand);
+  font-size: 0.8333cqw;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.site-footer__socials {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.2917cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__socials img {
+  display: block;
+}
+
+.site-footer__socials li:nth-child(1) img {
+  width: 18px;
+  height: 17px;
+}
+
+.site-footer__socials li:nth-child(2) img {
+  width: 9px;
+  height: 18px;
+}
+
+.site-footer__socials li:nth-child(3) img {
+  width: 18px;
+  height: 18px;
+}
+
+.site-footer__company {
+  width: 100%;
+  color: var(--color-image-placeholder);
+  font-family: var(--font-brand);
+  font-size: 0.7292cqw;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: pre-wrap;
+}
+
+.site-footer__company p {
+  margin: 0;
+}
+
+.site-footer__wordmark {
+  position: absolute;
+  top: calc(50% + 10.7292cqw);
+  left: 50%;
+  width: 93.75cqw;
+  height: 13.4375cqw;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.site-footer__wordmark p {
+  position: absolute;
+  top: -7.2917cqw;
+  left: -1.0417cqw;
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 19.0625cqw;
+  font-weight: 700;
+  letter-spacing: 0.1906cqw;
+  line-height: 1.5;
+  white-space: nowrap;
+}

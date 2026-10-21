@@ -1,0 +1,15 @@
+.text-box {
+  margin-top: var(--space-con2-to-text-box);
+}
+
+.text-box__heading {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.text-box__heading img {
+  display: block;
+  width: 1548.1px;
+  height: 135.494px;
+}

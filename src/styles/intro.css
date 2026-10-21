@@ -1,0 +1,116 @@
+.intro {
+  --intro-green: #0a5453;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  background: var(--intro-green);
+  color: #fff;
+  cursor: none;
+}
+
+.intro__divider,
+.intro__window-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.intro__wordmark {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: 0;
+  align-items: center;
+  white-space: nowrap;
+  font-family: Pretendard, sans-serif;
+  font-size: calc(220 / 1920 * 100vw);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  transform: translate(calc(-50% - 4vw), -50%);
+  transition: gap 1.1s ease, opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.intro--phase-1 .intro__wordmark {
+  gap: calc(439 / 1920 * 100vw);
+}
+
+.intro--phase-2 .intro__wordmark {
+  gap: calc(439 / 1920 * 100vw);
+  opacity: 0;
+}
+
+.intro__window {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 159px;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: width 1.1s ease, height 1.1s ease;
+}
+
+.intro--phase-1 .intro__window {
+  width: calc(439 / 1920 * 100vw);
+}
+
+.intro--phase-2 .intro__window {
+  width: 100%;
+  height: 100%;
+}
+
+.intro__window-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.intro--phase-2 .intro__window-divider {
+  opacity: 0;
+}
+
+.intro__window-image {
+  object-fit: cover;
+}
+
+.intro__window-divider {
+  z-index: 1;
+}
+
+.intro__skip {
+  position: fixed;
+  z-index: 3;
+  top: 78%;
+  left: 28%;
+  display: grid;
+  place-items: center;
+  width: 152px;
+  height: 152px;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font: 400 24px/1 Pretendard, sans-serif;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.intro__skip:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+@media (pointer: coarse) {
+  .intro {
+    cursor: auto;
+  }
+}

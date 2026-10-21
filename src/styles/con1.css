@@ -1,0 +1,24 @@
+.con1 {
+  margin-top: var(--space-hero-to-con1);
+  color: #000;
+}
+
+.con1__heading {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 113px;
+  font-weight: 700;
+  letter-spacing: 1.13px;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.con1__line {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.con1__line--first {
+  gap: 28px;
+}

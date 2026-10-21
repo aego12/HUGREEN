@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-white: #fff;
+  --color-brand-green: #072d2d;
+  --color-header-glass: rgba(7, 45, 45, 0.77);
+  --color-product-green: #0a5453;
+  --color-image-placeholder: #c8c8c8;
+  --color-question-card: #f5f5f5;
+  --color-benefit-panel: #d4e7ce;
+  --color-arrow-button: #e8e8e8;
+  --font-brand: Pretendard, sans-serif;
+  --space-hero-to-con1: 340px;
+  --space-con1-to-con2: 340px;
+  --space-con2-to-text-box: 472px;
+  --space-text-box-to-con3: 472px;
+  --space-con3-to-con4: 450px;
+  --space-con4-to-footer: 450px;
+}
+
+body {
+  margin: 0;
+}
