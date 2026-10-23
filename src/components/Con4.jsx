@@ -98,12 +98,18 @@ function ReviewCard({ review }) {
   )
 }
 
-function ReviewColumn({ items }) {
+function ReviewColumn({ items, direction }) {
   return (
-    <div className="con4__review-column">
-      {items.map((review) => (
-        <ReviewCard key={review.title} review={review} />
-      ))}
+    <div className={`con4__review-column con4__review-column--${direction}`}>
+      <div className="con4__review-track">
+        {[0, 1].map((copy) => (
+          <div className="con4__review-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+            {items.map((review) => (
+              <ReviewCard key={review.title} review={review} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -129,8 +135,8 @@ function Con4() {
       </article>
 
       <div className="con4__reviews" aria-label="고객 후기 카드">
-        <ReviewColumn items={reviews.slice(0, 4)} />
-        <ReviewColumn items={reviews.slice(4)} />
+        <ReviewColumn items={reviews.slice(0, 4)} direction="up" />
+        <ReviewColumn items={reviews.slice(4)} direction="down" />
       </div>
     </section>
   )

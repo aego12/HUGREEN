@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import facebookIcon from '../assets/con2-facebook.png'
 import instagramIcon from '../assets/con2-instagram.png'
 import blogIcon from '../assets/con2-blog.png'
@@ -5,8 +6,28 @@ import productImage from '../assets/con2-product-image.png'
 import '../styles/con2.css'
 
 function Con2() {
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!('IntersectionObserver' in window)) return undefined
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+      section.classList.add('con2--visible')
+      observer.disconnect()
+    }, { rootMargin: '0px 0px -15% 0px', threshold: 0 })
+
+    section.classList.add('con2--reveal')
+    observer.observe(section)
+    return () => {
+      observer.disconnect()
+      section.classList.remove('con2--reveal', 'con2--visible')
+    }
+  }, [])
+
   return (
-    <section className="con2" aria-label="Product Information">
+    <section className="con2" ref={sectionRef} aria-label="Product Information">
       <div className="con2__panel">
         <div className="con2__copy">
           <div className="con2__eyebrow">

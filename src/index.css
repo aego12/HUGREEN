@@ -18,8 +18,9 @@
   --space-con1-to-con2: 340px;
   --space-con2-to-text-box: 472px;
   --space-text-box-to-con3: 472px;
-  --space-con3-to-con4: 450px;
-  --space-con4-to-footer: 450px;
+  --space-section-gap: 450px;
+  --space-con3-to-con4: var(--space-section-gap);
+  --space-con4-to-footer: var(--space-section-gap);
 }
 
 body {

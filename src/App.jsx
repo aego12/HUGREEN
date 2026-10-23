@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <main>
-        <Hero />
+        <Hero isActive={introComplete} />
         <Con1 />
         <Con2 />
         <TextBox />

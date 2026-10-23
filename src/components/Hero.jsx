@@ -24,7 +24,7 @@ const navigationItems = [
   '그린리모델링',
 ]
 
-function Hero() {
+function Hero({ isActive = true }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(() => (
     typeof window !== 'undefined'
@@ -32,7 +32,7 @@ function Hero() {
   ))
 
   useEffect(() => {
-    if (isPaused) {
+    if (isPaused || !isActive) {
       return undefined
     }
 
@@ -41,7 +41,7 @@ function Hero() {
     }, slideInterval)
 
     return () => window.clearInterval(intervalId)
-  }, [isPaused])
+  }, [isPaused, isActive])
 
   return (
     <section className="hero" aria-label="휴그린 메인">

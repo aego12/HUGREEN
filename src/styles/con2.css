@@ -1,4 +1,7 @@
 .con2 {
+  --con2-reveal-distance: 64px;
+  --con2-reveal-duration: 800ms;
+  --con2-reveal-stagger: 240ms;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 62.5cqw;
   gap: 0.2604cqw;
@@ -7,6 +10,34 @@
   margin-top: var(--space-con1-to-con2);
   padding-inline: 0.5208cqw;
   container-type: inline-size;
+}
+
+.con2--reveal > .con2__panel,
+.con2--reveal > .con2__image-frame {
+  opacity: 0;
+  transform: translateY(var(--con2-reveal-distance));
+  transition:
+    opacity var(--con2-reveal-duration) ease,
+    transform var(--con2-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.con2--reveal > .con2__image-frame {
+  transition-delay: var(--con2-reveal-stagger);
+}
+
+.con2--visible > .con2__panel,
+.con2--visible > .con2__image-frame {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con2--reveal > .con2__panel,
+  .con2--reveal > .con2__image-frame {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .con2__panel,

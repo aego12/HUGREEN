@@ -2,6 +2,9 @@ import logo from '../assets/footer-logo.png'
 import naverIcon from '../assets/footer-sns-naver.png'
 import facebookIcon from '../assets/footer-sns-facebook.png'
 import instagramIcon from '../assets/footer-sns-instagram.png'
+import tickerLandscape from '../assets/footer-ticker-landscape.png'
+import tickerFrame from '../assets/footer-ticker-frame.svg'
+import tickerDivider from '../assets/footer-ticker-divider.svg'
 import '../styles/footer.css'
 
 const socialIcons = [
@@ -14,7 +17,24 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__ticker" aria-hidden="true">
-        <p>HUGREEN HUGREEN HUGREEN </p>
+        <div className="site-footer__ticker-track">
+          {[0, 1].map((group) => (
+            <div className="site-footer__ticker-group" key={group}>
+              {[0, 1].map((item) => (
+                <div className="site-footer__ticker-item" key={item}>
+                  <p>HUGREEN</p>
+                  <span className="site-footer__ticker-window">
+                    <img className="site-footer__ticker-frame" src={tickerFrame} alt="" />
+                    <span className="site-footer__ticker-crop">
+                      <img className="site-footer__ticker-photo" src={tickerLandscape} alt="" />
+                    </span>
+                    <img className="site-footer__ticker-divider" src={tickerDivider} alt="" />
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="site-footer__bottom">

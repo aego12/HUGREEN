@@ -1,11 +1,41 @@
 .text-box {
+  --text-box-title-size: 192px;
+  --text-box-clip-height: 230px;
+  --text-box-scroll-step: 55vh;
+  height: calc(var(--text-box-clip-height) + 2 * var(--text-box-scroll-step));
   margin-top: var(--space-con2-to-text-box);
 }
 
 .text-box__heading {
-  display: flex;
-  justify-content: center;
+  position: sticky;
+  top: calc(50vh - var(--text-box-clip-height) / 2);
+  height: var(--text-box-clip-height);
   margin: 0;
+  overflow: hidden;
+  font-family: var(--font-brand);
+  font-size: var(--text-box-title-size);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+}
+
+.text-box__track {
+  display: block;
+  will-change: transform;
+}
+
+.text-box__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--text-box-clip-height);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-box__track {
+    will-change: auto;
+  }
 }
 
 .text-box__heading img {

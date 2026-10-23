@@ -1,4 +1,7 @@
 .con1 {
+  --con1-image-width: 257px;
+  --con1-image-height: 93px;
+  --con1-image-gap: 36px;
   margin-top: var(--space-hero-to-con1);
   color: #000;
 }
@@ -14,11 +17,81 @@
 }
 
 .con1__line {
+  --reveal: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
   white-space: nowrap;
 }
 
-.con1__line--first {
-  gap: 28px;
+.con1__window {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(var(--con1-image-width) * var(--reveal));
+  height: var(--con1-image-height);
+  margin-inline: calc(var(--con1-image-gap) * var(--reveal));
+  overflow: hidden;
+}
+
+.con1__line--top .con1__window {
+  margin-inline: calc(14px + (var(--con1-image-gap) - 14px) * var(--reveal));
+}
+
+.con1__picture {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--con1-image-width);
+  height: var(--con1-image-height);
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.con1__frame {
+  position: absolute;
+  left: 0.5px;
+  top: 0;
+}
+
+.con1__photo {
+  position: absolute;
+  max-width: none;
+}
+
+.con1__line--top .con1__photo {
+  width: 211.67%;
+  height: 202.48%;
+  left: 0;
+  top: -50.7%;
+}
+
+.con1__line--middle .con1__photo {
+  width: 202.33%;
+  height: 193.55%;
+  left: -102.14%;
+  top: -78.49%;
+}
+
+.con1__line--bottom .con1__photo {
+  width: 191.44%;
+  height: 183.13%;
+  left: -73.93%;
+  top: -51.78%;
+}
+
+.con1__divider {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 0.5px);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.con1__line--middle .con1__divider {
+  left: calc(50% - 1.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con1__line {
+    --reveal: 1;
+  }
 }
